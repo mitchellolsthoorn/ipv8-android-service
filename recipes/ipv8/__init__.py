@@ -16,7 +16,7 @@ class LocalIPV8Recipe(PythonRecipe):
                'python2', 'setuptools', 'twisted', 'lib2to3', 'libnacl'
               ]
 
-    patches = ['no_tunnel_trustchain.patch']
+    patches = []
 
     python_depends = ['sqlite3', 'decorator', 'libnacl', 'pyasn1', 'six']
 
