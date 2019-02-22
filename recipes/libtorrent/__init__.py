@@ -50,8 +50,12 @@ class LibtorrentRecipe(Recipe):
         # Copy the shared libraries into the libs folder
         shutil.copyfile(join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/python/build', build_subdirs, 'libboost_python.so'),
                         join(self.ctx.get_libs_dir(arch.arch), 'libboost_python.so'))
+        shutil.copyfile(join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/python/build', build_subdirs, 'libboost_python.so'),
+                        join(self.ctx.get_site_packages_dir(arch.arch), 'libboost_python.so'))
         shutil.copyfile(join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/system/build', build_subdirs, 'libboost_system.so'),
                         join(self.ctx.get_libs_dir(arch.arch), 'libboost_system.so'))
+        shutil.copyfile(join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/system/build', build_subdirs, 'libboost_system.so'),
+                        join(self.ctx.get_site_packages_dir(arch.arch), 'libboost_system.so'))
         if 'openssl' in recipe.ctx.recipe_build_order:
             shutil.copyfile(join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/date_time/build', build_subdirs, 'libboost_date_time.so'),
                         join(self.ctx.get_libs_dir(arch.arch), 'libboost_date_time.so'))
