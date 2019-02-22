@@ -59,8 +59,13 @@ class LibtorrentRecipe(Recipe):
         if 'openssl' in recipe.ctx.recipe_build_order:
             shutil.copyfile(join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/date_time/build', build_subdirs, 'libboost_date_time.so'),
                         join(self.ctx.get_libs_dir(arch.arch), 'libboost_date_time.so'))
+            shutil.copyfile(
+                join(env['BOOST_BUILD_PATH'], 'bin.v2/libs/date_time/build', build_subdirs, 'libboost_date_time.so'),
+                join(self.ctx.get_site_packages_dir(arch.arch), 'libboost_date_time.so'))
         shutil.copyfile(join(self.get_build_dir(arch.arch), 'bin', build_subdirs, 'libtorrent_rasterbar.so'),
                         join(self.ctx.get_libs_dir(arch.arch), 'libtorrent_rasterbar.so'))
+        shutil.copyfile(join(self.get_build_dir(arch.arch), 'bin', build_subdirs, 'libtorrent_rasterbar.so'),
+                        join(self.ctx.get_site_packages_dir(arch.arch), 'libtorrent_rasterbar.so'))
         shutil.copyfile(join(self.get_build_dir(arch.arch), 'bindings/python/bin', build_subdirs, 'libtorrent.so'),
                         join(self.ctx.get_site_packages_dir(arch.arch), 'libtorrent.so'))
 
