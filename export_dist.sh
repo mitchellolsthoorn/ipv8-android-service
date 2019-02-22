@@ -15,5 +15,5 @@ p4a export_dist \
 --arch=armeabi-v7a \
 --dist_name=IPV8Service \
 --bootstrap=service_only \
---requirements=ipv8 \
+--requirements=loader \
 ./dist

@@ -12,9 +12,8 @@ class LocalIPV8Recipe(PythonRecipe):
 
     url = 'git+https://github.com/Tribler/py-ipv8.git'
 
-    depends = ['apsw', 'libtorrent', 'cryptography', 'libsodium', 'netifaces',
-               'python2', 'setuptools', 'twisted', 'lib2to3', 'libnacl'
-              ]
+    depends = ['apsw', 'cryptography', 'libsodium', 'netifaces', 'python2', 'setuptools', 'twisted', 'lib2to3',
+               'libnacl']
 
     patches = []
 

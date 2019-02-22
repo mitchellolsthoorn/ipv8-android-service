@@ -18,6 +18,6 @@ p4a create \
 --private=./service \
 --dist_name=IPV8Service \
 --bootstrap=service_only \
---requirements=ipv8 \
+--requirements=loader \
 --whitelist=.p4a-whitelist
 q
