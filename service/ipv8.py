@@ -18,7 +18,7 @@ class IPV8Service(object):
 
     def run(self):
         from twisted.internet import reactor
-        from twisted.plugins.dapp_plugin import Options, service_maker
+        from twisted.plugins.android_plugin import Options, service_maker
 
         options = Options()
         Options.parseOptions(options, os.getenv('PYTHON_SERVICE_ARGUMENT', '').split())
