@@ -29,5 +29,10 @@ class LocalLoaderRecipe(PythonRecipe):
         cp('-rf', join(self.get_build_dir(arch.arch), 'twisted'),
            join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages'))
 
+        # Install web interface
+        cp('-rf', join(self.get_build_dir(arch.arch), 'web'), self.ctx.get_python_install_dir())
+        cp('-rf', join(self.get_build_dir(arch.arch), 'web'), join(self.ctx.get_python_install_dir(), 'lib'))
+        cp('-rf', join(self.get_build_dir(arch.arch), 'web'), './')
+
 
 recipe = LocalLoaderRecipe()
