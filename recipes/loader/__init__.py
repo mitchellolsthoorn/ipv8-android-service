@@ -30,9 +30,9 @@ class LocalLoaderRecipe(PythonRecipe):
            join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages'))
 
         # Install web interface
-        cp('-rf', join(self.get_build_dir(arch.arch), 'loader/web'), self.ctx.get_python_install_dir())
         cp('-rf', join(self.get_build_dir(arch.arch), 'loader/web'), join(self.ctx.get_python_install_dir(), 'lib'))
-        cp('-rf', join(self.get_build_dir(arch.arch), 'loader/web'), './')
+        cp('-rf', join(self.get_build_dir(arch.arch), 'loader/web'),
+           join(self.ctx.get_python_install_dir(), 'lib/python2.7/site-packages/loader'))
 
 
 recipe = LocalLoaderRecipe()
