@@ -5,7 +5,6 @@ import sqlite3
 
 class IPV8Service(object):
 
-
     def __init__(self):
         '''
         Setup environment
@@ -14,7 +13,6 @@ class IPV8Service(object):
 
         # Set logging format and level
         logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
-
 
     def run(self):
         from twisted.internet import reactor
